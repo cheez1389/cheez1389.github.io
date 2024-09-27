@@ -14,8 +14,8 @@ body {
 }
 
 .splide {
-    width: 1080px;    /* Set carousel width */
-    height: 1920px;   /* Set carousel height */
+    width: 100%;
+    height: auto;
 }
 
 .splide__slide img {
