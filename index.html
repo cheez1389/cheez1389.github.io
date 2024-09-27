@@ -1,20 +1,29 @@
-<section id="image-carousel" class="splide" aria-label="Beautiful Images">
-  <div class="splide__track">
-		<ul class="splide__list">
-			<li class="splide__slide">
-				<img src="image1.jpg" alt="">
-			</li>
-			<li class="splide__slide">
-				<img src="image2.jpg" alt="">
-			</li>
-			<li class="splide__slide">
-				<img src="image3.jpg" alt="">
-			</li>
-		</ul>
-  </div>
-</section>
-<script>
-  document.addEventListener( 'DOMContentLoaded', function () {
-    new Splide( '#image-carousel' ).mount();
-  } );
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+</head>
+<body>
+    <section id="image-carousel" class="splide" aria-label="Beautiful Images">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide">
+                    <img src="image01.jpg" alt="Image 1">
+                </li>
+                <li class="splide__slide">
+                    <img src="image02.jpg" alt="Image 2">
+                </li>
+                <li class="splide__slide">
+                    <img src="image03.jpg" alt="Image 3">
+                </li>
+            </ul>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
