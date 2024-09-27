@@ -1,25 +1,44 @@
-<!-- STYLES FOR DEMO PURPOSES ONLY -->
-<style>
-  * {
-    margin: 0 !important;
-    padding: 0;
-  }
-</style>
-<!-- Carousel -->
-<div class="carousel" data-carousel="1" data-speed="2000">
-  <span class="carousel-control-left"></span>
-  <span class="carousel-control-right"></span>
-  <div class="carousel-content">
-    <!-- add extra last pic first and extra first pic last for hover effect to work properly  -->
-    <img src="https://cdn.mos.cms.futurecdn.net/gvQ9NhQP8wbbM32jXy4V3j-1200-80.jpg" alt="image 5" />
-    <img src="https://www.printique.com/wp-content/uploads/2016/10/photography-landscape-adoramapix.jpg" alt="image 1" />
-    <img src="https://silverlight.store/posts/wp-content/uploads/2023/11/jasper-boer-1fUu0dratoM-unsplash-scaled-1.jpg" alt="image 2" />
+<html lang="en">
 
-    <img src=" https://images.pexels.com/photos/1878715/pexels-photo-1878715.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="image 3" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <title>Image Carousel</title>
+</head>
 
-    <img src="https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="image 4" />
+<body>
+  <section class="carousel">
+    <div class="carousel_slider">
+      <div class="content_inner_slider">
+        <img src="https://images.unsplash.com/photo-1421789665209-c9b2a435e3dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=30" alt="" class="img">
+        <img src="https://images.unsplash.com/photo-1519500099198-fd81846b8f03?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=30" alt="" class="img">
+        <img src="https://images.unsplash.com/photo-1517052269751-4ae3ad86cc59?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=30" alt="" class="img">
+        <img src="https://images.unsplash.com/photo-1459909633680-206dc5c67abb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=30" alt="" class="img">
+        <img src="https://images.unsplash.com/photo-1519355673725-fe7ac3f995f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=30" alt="" class="img">
+      </div>
+      <button class="prev_button">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </button>
+      <button class="next_button">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </button>
+    </div>
+    <ul class="dots">
+      <li class="dot" value="0"></li>
+      <li class="dot" value="1"></li>
+      <li class="dot" value="2"></li>
+      <li class="dot" value="3"></li>
+      <li class="dot" value="4"></li>
+    </ul>
+    <div class="form">
+      <input type="checkbox" class="auto_slide" id="slide">
+      <label for="slide">Auto Slide</label>
+    </div>
+  </section>
+  <script src="./app.js"></script>
+</body>
 
-    <img src="https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="image 5" />
-    <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="image 1" />
-  </div>
-</div>
+</html>
