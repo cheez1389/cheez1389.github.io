@@ -1,14 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
-    alert("JavaScript is working!"); // Check if JS is working
-
     new Splide('#image-carousel', {
-        type: 'loop',
-        autoplay: true,
-        interval: 3000,
-        cover: true,
-        height: '100%',
-        width: '100%',
-        arrows: true,
-        pagination: false,
+        type       : 'loop',       // Carousel will loop
+        autoplay   : true,         // Enable auto-scroll
+        interval   : 3000,         // Auto-scroll interval (3 seconds)
+        cover      : true,
+        height     : '100%',       // Make sure the height is 100%
+        width      : '100%',       // Make sure the width is 100%
+        arrows     : true,         // Enable navigation arrows
+        pagination : false,        // Disable pagination (dots)
     }).mount();
 });
