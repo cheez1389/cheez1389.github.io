@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Carousel</title>
+    <title>Image Carousel with Google Drive Embed</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
 </head>
 <body>
-    <h1>Image Carousel Test</h1> <!-- Add this to see if HTML loads -->
     <section id="image-carousel" class="splide" aria-label="Beautiful Images">
         <div class="splide__track">
             <ul class="splide__list">
+                <!-- Embed the Google Drive content using an iframe -->
                 <li class="splide__slide">
-                    <img src="images/image01.jpg" alt="Image 1" style="width: 500px; height: auto;">
+                    <iframe src="https://drive.google.com/file/d/18kVw1FcWmpw_ISJIeivTXtmeOmie_m_r/preview" width="1080" height="1920" allow="autoplay"></iframe>
                 </li>
                 <li class="splide__slide">
-                    <img src="https://w0.peakpx.com/wallpaper/1006/468/HD-wallpaper-moonlight-sky-reflection-white-sea-night-blue-luna-vara-moon-water-summer-thumbnail.jpg" alt="Image 2">
+                    <img src="images/image02.jpg" alt="Image 2">
                 </li>
                 <li class="splide__slide">
-                    <img src="https://i.redd.it/z9lwgzycnkma1.jpg" alt="Image 3">
+                    <img src="images/image03.jpg" alt="Image 3">
                 </li>
             </ul>
         </div>
