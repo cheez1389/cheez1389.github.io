@@ -7,6 +7,7 @@ new Splide('#image-carousel', {
     width      : '100%',
     arrows     : true,
     pagination : false,
+    heightRatio: 0.5,
 }).mount();
 
 });
