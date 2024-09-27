@@ -1,28 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Carousel</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="carousel-container">
-        <div class="carousel">
-            <div class="carousel-image">
-                <img src="images/image1.jpg" alt="Image 1">
-            </div>
-            <div class="carousel-image">
-                <img src="images/image2.jpg" alt="Image 2">
-            </div>
-            <div class="carousel-image">
-                <img src="images/image3.jpg" alt="Image 3">
-            </div>
-        </div>
-        <button class="prev">‹</button>
-        <button class="next">›</button>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+<section id="image-carousel" class="splide" aria-label="Beautiful Images">
+  <div class="splide__track">
+		<ul class="splide__list">
+			<li class="splide__slide">
+				<img src="image01.jpg" alt="">
+			</li>
+			<li class="splide__slide">
+				<img src="image02.jpg" alt="">
+			</li>
+			<li class="splide__slide">
+				<img src="image03.jpg" alt="">
+			</li>
+		</ul>
+  </div>
+</section>
+<script>
+  document.addEventListener( 'DOMContentLoaded', function () {
+    new Splide( '#image-carousel' ).mount();
+  } );
+</script>
