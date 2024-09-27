@@ -10,22 +10,16 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f3f3f3; /* Normal background color */
+    background-color: #f3f3f3;
 }
 
 .splide {
-    width: 1080px;
-    height: 1920px;
+    width: 1080px;    /* Set carousel width */
+    height: 1920px;   /* Set carousel height */
 }
 
-.splide__slide {
-    border: none; /* Remove any border around slides */
-}
-
-.splide__slide img,
-.splide__slide iframe {
+.splide__slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure proper fitting */
-    border: none; /* Remove borders */
+    object-fit: cover;  /* Ensures the images fit within the carousel */
 }
