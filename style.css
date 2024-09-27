@@ -17,14 +17,30 @@ body {
 }
 
 .splide {
+    position: relative;  /* Ensures buttons are positioned relative to this container */
     width: 100%;
-    height: 500px;
+    height: 500px;  /* Adjust as needed */
+}
+
+.splide__arrow {
+    position: absolute;
+    top: 50%;               /* Center the buttons vertically */
+    transform: translateY(-50%);  /* Adjust for the center of the button */
+    z-index: 10;            /* Ensure the buttons appear on top of the images */
+}
+
+.splide__arrow--prev {
+    left: 10px;  /* Adjust left button position */
+}
+
+.splide__arrow--next {
+    right: 10px;  /* Adjust right button position */
 }
 
 .splide__slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;  /* Ensures the images fit within the carousel */
+    object-fit: cover;
 }
 
 img {
