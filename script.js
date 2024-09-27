@@ -1,50 +1,45 @@
-const carouselSlide = document.querySelector('.carousel-slide');
-const images = document.querySelectorAll('.carousel-slide img');
+const carousel = document.querySelector('.carousel');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+let currentIndex = 0;
+const images = document.querySelectorAll('.carousel-image');
+const totalImages = images.length;
 
-// Buttons
-const prevBtn = document.querySelector('#prevBtn');
-const nextBtn = document.querySelector('#nextBtn');
+// Auto scroll function
+let autoScroll = setInterval(() => {
+    moveToNextSlide();
+}, 3000);
 
-// Counter
-let counter = 0;
-const size = images[0].clientWidth;
-
-// Move to next slide
-function slideTo(index) {
-  carouselSlide.style.transform = 'translateX(' + (-size * index) + 'px)';
+function moveToNextSlide() {
+    currentIndex++;
+    if (currentIndex >= totalImages) {
+        currentIndex = 0;
+    }
+    updateCarousel();
 }
 
-// Next button event listener
+function moveToPrevSlide() {
+    currentIndex--;
+    if (currentIndex < 0) {
+        currentIndex = totalImages - 1;
+    }
+    updateCarousel();
+}
+
+function updateCarousel() {
+    const offset = -currentIndex * 100;
+    carousel.style.transform = `translateX(${offset}%)`;
+}
+
+// Button event listeners
 nextBtn.addEventListener('click', () => {
-  nextSlide();
+    clearInterval(autoScroll);  // Stop auto scroll when manually clicked
+    moveToNextSlide();
+    autoScroll = setInterval(moveToNextSlide, 3000);  // Restart auto scroll
 });
 
-// Previous button event listener
 prevBtn.addEventListener('click', () => {
-  prevSlide();
-});
-
-// Auto Slide Function
-function nextSlide() {
-  if (counter >= images.length - 1) counter = -1;
-  counter++;
-  slideTo(counter);
-}
-
-function prevSlide() {
-  if (counter <= 0) counter = images.length;
-  counter--;
-  slideTo(counter);
-}
-
-// Auto Slide at intervals (every 3 seconds)
-let autoSlide = setInterval(nextSlide, 3000);
-
-// Stop auto-slide on hover and restart on mouse leave
-carouselSlide.addEventListener('mouseover', () => {
-  clearInterval(autoSlide);
-});
-
-carouselSlide.addEventListener('mouseout', () => {
-  autoSlide = setInterval(nextSlide, 3000);
+    clearInterval(autoScroll);  // Stop auto scroll when manually clicked
+    moveToPrevSlide();
+    autoScroll = setInterval(moveToNextSlide, 3000);  // Restart auto scroll
 });
