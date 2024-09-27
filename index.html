@@ -4,93 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Image Carousel</title>
-  <style>
-    /* CSS for the Carousel */
-    .carousel {
-      position: relative;
-      max-width: 100%;
-      overflow: hidden;
-      margin: auto;
-    }
-
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .carousel-slide {
-      min-width: 100%;
-      transition: 0.5s ease;
-    }
-
-    .carousel img {
-      width: 100%;
-      display: block;
-      border-radius: 10px;
-    }
-
-    .carousel-controls {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      padding: 0 20px;
-    }
-
-    .carousel-controls button {
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 50%;
-      font-size: 18px;
-    }
-
-    .carousel-controls button:hover {
-      background: rgba(0, 0, 0, 0.7);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="carousel">
-    <div class="carousel-track">
-      <div class="carousel-slide"><img src="https://c4.wallpaperflare.com/wallpaper/590/400/974/hd-nature-photography-1920x1080-wallpaper-preview.jpg" alt="Image 1"></div>
-      <div class="carousel-slide"><img src="https://t3.ftcdn.net/jpg/05/35/47/38/360_F_535473874_OWCa2ohzXXNZgqnlzF9QETsnbrSO9pFS.jpg" alt="Image 2"></div>
-      <div class="carousel-slide"><img src="https://wallpapers.com/images/featured/beautiful-nature-photography-opirqdtt32og0yj3.jpg" alt="Image 3"></div>
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-slide">
+        <img src="image1.jpg" alt="Image 1">
+        <img src="image2.jpg" alt="Image 2">
+        <img src="image3.jpg" alt="Image 3">
+        <img src="image4.jpg" alt="Image 4">
+      </div>
     </div>
-    <div class="carousel-controls">
-      <button id="prev-slide">◀</button>
-      <button id="next-slide">▶</button>
-    </div>
+    <button id="prevBtn" class="carousel-btn">Previous</button>
+    <button id="nextBtn" class="carousel-btn">Next</button>
   </div>
 
-  <script>
-    const track = document.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
-    const nextButton = document.querySelector('#next-slide');
-    const prevButton = document.querySelector('#prev-slide');
-
-    let currentSlide = 0;
-
-    function updateSlidePosition() {
-      const slideWidth = slides[0].getBoundingClientRect().width;
-      track.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
-    }
-
-    nextButton.addEventListener('click', () => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      updateSlidePosition();
-    });
-
-    prevButton.addEventListener('click', () => {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      updateSlidePosition();
-    });
-
-    window.addEventListener('resize', updateSlidePosition);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
