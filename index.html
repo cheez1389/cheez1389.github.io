@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Carousel</title>
+  <style>
+    /* CSS for the Carousel */
+    .carousel {
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
+      margin: auto;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      transition: 0.5s ease;
+    }
+
+    .carousel img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 20px;
+    }
+
+    .carousel-controls button {
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 18px;
+    }
+
+    .carousel-controls button:hover {
+      background: rgba(0, 0, 0, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel">
+    <div class="carousel-track">
+      <div class="carousel-slide"><img src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg" alt="Image 1"></div>
+      <div class="carousel-slide"><img src="https://onlinejpgtools.com/images/examples-onlinejpgtools/sunflower.jpg" alt="Image 2"></div>
+      <div class="carousel-slide"><img src="https://onlinejpgtools.com/images/examples-onlinejpgtools/leaves-with-droplets.jpg" alt="Image 3"></div>
+    </div>
+    <div class="carousel-controls">
+      <button id="prev-slide">◀</button>
+      <button id="next-slide">▶</button>
+    </div>
+  </div>
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('#next-slide');
+    const prevButton = document.querySelector('#prev-slide');
+
+    let currentSlide = 0;
+
+    function updateSlidePosition() {
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      track.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateSlidePosition();
+    });
+
+    prevButton.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateSlidePosition();
+    });
+
+    window.addEventListener('resize', updateSlidePosition);
+  </script>
+</body>
+</html>
