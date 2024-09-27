@@ -47,21 +47,30 @@
       display: flex;
       justify-content: space-between;
       transform: translateY(-50%);
-      padding: 0 20px;
+      padding: 0 10px; /* Reduced padding to prevent overflow */
+      box-sizing: border-box; /* Include padding in width */
     }
 
     .carousel-controls button {
       background: rgba(0, 0, 0, 0.5);
       color: white;
       border: none;
-      padding: 10px;
+      padding: 8px; /* Smaller buttons */
       cursor: pointer;
       border-radius: 50%;
-      font-size: 18px;
+      font-size: 16px; /* Slightly smaller font */
     }
 
     .carousel-controls button:hover {
       background: rgba(0, 0, 0, 0.7);
+    }
+
+    /* Media query to handle smaller screen sizes */
+    @media (max-width: 600px) {
+      .carousel-controls button {
+        padding: 5px; /* Even smaller buttons for small screens */
+        font-size: 14px;
+      }
     }
   </style>
 </head>
