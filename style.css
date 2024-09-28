@@ -14,47 +14,14 @@ body {
 }
 
 .splide {
-<<<<<<< HEAD
-    position: relative;  /* Ensures the arrows are positioned relative to the carousel */
     width: 100%;
-    height: 500px;  /* Adjust the height as needed */
-}
-
-.splide__arrow {
-    position: absolute;
-    top: 50%;  /* Center the buttons vertically */
-    transform: translateY(-50%);  /* Correct the vertical alignment */
-    z-index: 10;  /* Ensure the buttons appear above the images */
-    width: 40px;  /* Adjust button size if necessary */
-    height: 40px;
-    background-color: rgba(0, 0, 0, 0.5);  /* Optional: add a semi-transparent background for visibility */
-    border: none;  /* Remove any border */
-    color: white;  /* Arrow color */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.splide__arrow--prev {
-    left: 10px;  /* Position the left button */
-}
-
-.splide__arrow--next {
-    right: 10px;  /* Position the right button */
-=======
-    width: 100%;
-    height: 500px;
->>>>>>> parent of 872229d (Update style.css)
+    height: auto;
 }
 
 .splide__slide img {
     width: 100%;
     height: 100%;
-<<<<<<< HEAD
-    object-fit: cover;  /* Crop images to fit the carousel */
-=======
     object-fit: cover;  /* Ensures the images fit within the carousel */
->>>>>>> parent of 872229d (Update style.css)
 }
 
 img {
